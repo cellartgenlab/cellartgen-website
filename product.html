@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CELLARTGEN LAB PRIVATE LIM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+.cg-catalog-tools{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:20px 0 28px;flex-wrap:wrap}.cg-catalog-search{display:flex;align-items:center;gap:10px;min-width:min(100%,320px);padding:12px 16px;border:1px solid rgba(160,125,75,.35);border-radius:10px;background:#fff}.cg-catalog-search input{border:0;outline:0;width:100%;background:transparent;color:inherit}.cg-catalog-tools>span{font-size:13px;opacity:.75}.cg-product-art{display:flex;align-items:center;justify-content:center;min-height:190px;background:linear-gradient(135deg,#e8e1d2,#c7d1c2);position:relative}.cg-art-mark{font-size:42px;font-weight:800;letter-spacing:3px;color:#49614c;opacity:.8}.cg-full-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(12,18,14,.78);backdrop-filter:blur(8px)}.cg-full-modal.active{display:flex}.cg-full-panel{position:relative;width:min(980px,100%);max-height:92vh;overflow:auto;padding:clamp(22px,4vw,46px);border-radius:18px;background:#fff;color:#253329;box-shadow:0 24px 90px #0005}.cg-full-close{position:sticky;float:right;top:0;border:0;border-radius:50%;width:40px;height:40px;font-size:26px;background:#edf0e9;color:#273c2b;cursor:pointer}.cg-full-head{display:grid;grid-template-columns:80px 1fr;gap:22px;align-items:start;margin:12px 0 28px}.cg-full-symbol{display:grid;place-items:center;width:76px;height:76px;border-radius:16px;background:#e5ecdf;color:#426247;font-weight:800;font-size:24px}.cg-full-kicker,.cg-insight-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8b7046;font-weight:700}.cg-full-head h2{margin:7px 0;font-size:clamp(24px,4vw,36px)}.cg-full-head p{line-height:1.7;color:#647166}.cg-detail-section{padding:22px 0;border-top:1px solid #e8ece6}.cg-detail-section h3{font-size:19px;margin:0 0 12px;color:#334c38}.cg-detail-section p,.cg-detail-section li{line-height:1.75;color:#59675d}.cg-detail-section ul{padding-left:22px}.cg-spec-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cg-spec-grid>div{padding:13px;border:1px solid #e5eae2;border-radius:9px;display:grid;gap:5px}.cg-spec-grid b{font-size:12px;color:#6b795f}.cg-spec-grid span{font-size:14px}.cg-tag-row,.cg-insight-pills{display:flex;gap:8px;flex-wrap:wrap}.cg-tag-row span,.cg-insight-pills span{padding:6px 10px;border-radius:20px;background:#edf2e9;color:#49634a;font-size:12px}.cg-highlight-note,.cg-product-insight{padding:17px;border-radius:12px;background:#f1f5ed;margin:14px 0}.cg-highlight-note b,.cg-highlight-note span{display:block}.cg-small-note{font-size:12px;color:#758076}.cg-faq details{padding:13px 0;border-bottom:1px solid #e7ebe4}.cg-faq summary{font-weight:700;cursor:pointer;color:#3c5541}.cg-full-footer{padding:20px 0 0;border-top:1px solid #e8ece6}.cg-cta-btn{display:inline-block;margin-top:10px;padding:12px 18px;border-radius:8px;background:#47634a;color:#fff;text-decoration:none}@media(max-width:600px){.cg-full-modal{padding:8px}.cg-full-panel{max-height:96vh;padding:20px}.cg-full-head{grid-template-columns:1fr}.cg-spec-grid{grid-template-columns:1fr}}
+</style>
+
+</head>
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="main-header" id="mainHeader">
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+            <a href="index.html" class="ctg-new-header-logo">
+                <img src="img/CELL-ARTGEN.png" alt="CELLARTGEN">
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="product.html"class="active">Our Expertise</a>
+                <a href="patented-apis.html">Patented APIs</a>
+                <a href="faculty tour.html">faculty tour</a>
+                <a href="our science.html">Our Science</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+
+            <!-- HEADER CONTACT -->
+
+            <div class="header-contact">
+
+                <a href="tel:+919876543210">
+                    <span class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+                    +91 9982015750
+                </a>
+
+                <a href="mailto:info@cellartgen.com">
+                    <span class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    info@cellartgen.com
+                </a>
+
+                <button class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+            </div>
+
+
+            <!-- MOBILE BUTTON -->
+
+            <button class="mobile-menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE MENU -->
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="product.html"class="active">Our Expertise</a>
+            <a href="patented-apis.html">Patented APIs</a>
+            <a href="faculty tour.html">faculty tour</a>
+            <a href="our science.html">Our Science</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html">Contact</a>
+
+            <div class="mobile-contact">
+
+                <a href="tel:+919876543210">
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </a>
+
+                <a href="mailto:info@cellartgen.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    info@cellartgen.com
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <body>
+
+        <div class="cg-products-page">
+
+            <!-- =========================
+         HERO
+    ========================= -->
+
+            <section class="cg-product-hero">
+
+                <div class="cg-hero-inner">
+
+                    <div class="cg-hero-text">
+
+                        <div class="cg-small-title">
+                            CELLARTGEN LAB PRIVATE LIMITED
+                        </div>
+
+                        <h1>
+                            Quality Products.<br>
+                            <span>Better Healthcare.</span>
+                        </h1>
+
+                        <p>
+                            Explore our growing portfolio of pharmaceutical,
+                            nutraceutical and healthcare products developed with
+                            a focus on quality, consistency and innovation.
+                        </p>
+
+                        <a href="#cg-products" class="cg-hero-btn">
+                            Explore Products →
+                        </a>
+
+                    </div>
+
+
+                    <div class="cg-hero-image">
+
+                        <img src="https://img.gfx.no/2624/2624951/NTB_aH6kFEDy5tE.jpg" alt="Pharmaceutical Products">
+
+                        <div class="cg-floating-card">
+
+                            <div class="cg-floating-icon">
+                                ✚
+                            </div>
+
+                            <div>
+                                <strong>Quality Focused</strong>
+                                <span>Healthcare Products</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+         INTRO
+    ========================= -->
+
+            <section class="cg-product-intro">
+
+                <div class="cg-section-tag">
+                    Our Portfolio
+                </div>
+
+                <h2>
+                    Discover Our Product Range
+                </h2>
+
+                <p>
+                    From pharmaceutical formulations to wellness-focused
+                    solutions, our product portfolio is designed around
+                    quality, reliability and modern healthcare needs.
+                </p>
+
+            </section>
+
+
+            <!-- =========================
+         FILTER
+    ========================= -->
+
+            <div class="cg-filter-wrap">
+
+                <button class="cg-filter-btn active" data-filter="all">
+                    All Products
+                </button>
+
+                <button class="cg-filter-btn" data-filter="pharma">
+                    Pharmaceutical
+                </button>
+
+                <button class="cg-filter-btn" data-filter="nutra">
+                    Nutraceutical
+                </button>
+
+                <button class="cg-filter-btn" data-filter="wellness">
+                    Wellness
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+         PRODUCTS
+    ========================= -->
+
+            <section id="cg-products">
+
+                <div class="cg-product-grid">
+
+
+                    <!-- PRODUCT 01 -->
+
+                    <article class="cg-product-card" data-category="pharma">
+
+                        <div class="cg-product-image">
+
+                            <img src="https://img.gfx.no/2624/2624951/NTB_aH6kFEDy5tE.jpg" alt="Pharmaceutical Tablets">
+
+                            <span class="cg-product-badge">
+                                PHARMA
+                            </span>
+
+                        </div>
+
+                        <div class="cg-product-info">
+
+                            <div class="cg-product-category">
+                                Pharmaceutical
+                            </div>
+
+                            <h3>
+                                Advanced Tablets
+                            </h3>
+
+                            <p>
+                                Quality-focused tablet formulations
+                                developed for consistent pharmaceutical
+                                performance.
+                            </p>
+
+                            <button class="cg-product-link" onclick="openProduct(
+                            'Advanced Tablets',
+                            'Pharmaceutical',
+                            'https:',
+                            'Quality-focused tablet formulations developed with a focus on consistency and reliable manufacturing.'
+                            )">
+                                View Details
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCT 02 -->
+
+                    <article class="cg-product-card" data-category="pharma">
+
+                        <div class="cg-product-image">
+
+                            <img src="https://mblogthumb-phinf.pstatic.net/MjAyNTAyMDdfNzcg/MDAxNzM4ODc5OTI0NDcz.Zj1KUWKNPDdU9J3GlMEFu4uuwKMoQIgFELXIp9KP-q8g.wQkM-iqtbifRTXB8yBP_LMvj79cnq5ZRR3u5cJ9fhFgg.JPEG/image.JPEG?type=w800"
+                                alt="Capsules">
+
+                            <span class="cg-product-badge">
+                                CAPSULES
+                            </span>
+
+                        </div>
+
+                        <div class="cg-product-info">
+
+                            <div class="cg-product-category">
+                                Pharmaceutical
+                            </div>
+
+                            <h3>
+                                Premium Capsules
+                            </h3>
+
+                            <p>
+                                Carefully developed capsule formulations
+                                supporting diverse healthcare requirements.
+                            </p>
+
+                            <button class="cg-product-link" onclick="openProduct(
+                            'Premium Capsules',
+                            'Pharmaceutical',
+                            'https://mblogthumb-phinf.pstatic.net/MjAyNTAyMDdfNzcg/MDAxNzM4ODc5OTI0NDcz.Zj1KUWKNPDdU9J3GlMEFu4uuwKMoQIgFELXIp9KP-q8g.wQkM-iqtbifRTXB8yBP_LMvj79cnq5ZRR3u5cJ9fhFgg.JPEG/image.JPEG?type=w800',
+                            'Premium capsule formulations designed with quality and manufacturing consistency in mind.'
+                            )">
+                                View Details
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCT 03 -->
+
+                    <article class="cg-product-card" data-category="nutra">
+
+                        <div class="cg-product-image">
+
+                            <img src="https://foto.wuestenigel.com/photos/preview/verschiedene-medikamente-und-pillen-auf-weissem-hintergrund.webp"
+                                alt="Nutraceutical Products">
+
+                            <span class="cg-product-badge">
+                                NUTRA
+                            </span>
+
+                        </div>
+
+                        <div class="cg-product-info">
+
+                            <div class="cg-product-category">
+                                Nutraceutical
+                            </div>
+
+                            <h3>
+                                Nutraceutical Range
+                            </h3>
+
+                            <p>
+                                Modern nutritional formulations designed
+                                for everyday wellness and supplementation.
+                            </p>
+
+                            <button class="cg-product-link" onclick="openProduct(
+                            'Nutraceutical Range',
+                            'Nutraceutical',
+                            'https://foto.wuestenigel.com/photos/preview/verschiedene-medikamente-und-pillen-auf-weissem-hintergrund.webp',
+                            'A modern nutraceutical portfolio designed around quality, convenience and everyday wellness.'
+                            )">
+                                View Details
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCT 04 -->
+
+                    <article class="cg-product-card" data-category="wellness">
+
+                        <div class="cg-product-image">
+
+                            <img src="https://img.gfx.no/2624/2624951/NTB_aH6kFEDy5tE.jpg" alt="Healthcare Products">
+
+                            <span class="cg-product-badge">
+                                WELLNESS
+                            </span>
+
+                        </div>
+
+                        <div class="cg-product-info">
+
+                            <div class="cg-product-category">
+                                Wellness
+                            </div>
+
+                            <h3>
+                                Daily Wellness
+                            </h3>
+
+                            <p>
+                                Wellness-oriented products created to
+                                complement modern lifestyle needs.
+                            </p>
+
+                            <button class="cg-product-link" onclick="openProduct(
+                            'Daily Wellness',
+                            'Wellness',
+                            'https://img.gfx.no/2624/2624951/NTB_aH6kFEDy5tE.jpg',
+                            'Wellness-focused solutions developed to complement modern lifestyle and healthcare needs.'
+                            )">
+                                View Details
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCT 05 -->
+
+                    <article class="cg-product-card" data-category="pharma">
+
+                        <div class="cg-product-image">
+
+                            <img src="https://foto.wuestenigel.com/photos/preview/verschiedene-medikamente-und-pillen-auf-weissem-hintergrund.webp"
+                                alt="Tablets">
+
+                            <span class="cg-product-badge">
+                                TABLETS
+                            </span>
+
+                        </div>
+
+                        <div class="cg-product-info">
+
+                            <div class="cg-product-category">
+                                Pharmaceutical
+                            </div>
+
+                            <h3>
+                                Healthcare Tablets
+                            </h3>
+
+                            <p>
+                                Pharmaceutical tablet solutions developed
+                                for dependable manufacturing and quality.
+                            </p>
+
+                            <button class="cg-product-link" onclick="openProduct(
+                            'Healthcare Tablets',
+                            'Pharmaceutical',
+                            'https://foto.wuestenigel.com/photos/preview/verschiedene-medikamente-und-pillen-auf-weissem-hintergrund.webp',
+                            'Pharmaceutical tablet solutions focused on quality, consistency and dependable manufacturing.'
+                            )">
+                                View Details
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCT 06 -->
+
+                    <article class="cg-product-card" data-category="nutra">
+
+                        <div class="cg-product-image">
+
+                            <img src="https://mblogthumb-phinf.pstatic.net/MjAyNTAyMDdfNzcg/MDAxNzM4ODc5OTI0NDcz.Zj1KUWKNPDdU9J3GlMEFu4uuwKMoQIgFELXIp9KP-q8g.wQkM-iqtbifRTXB8yBP_LMvj79cnq5ZRR3u5cJ9fhFgg.JPEG/image.JPEG?type=w800"
+                                alt="Supplement Capsules">
+
+                            <span class="cg-product-badge">
+                                SUPPLEMENTS
+                            </span>
+
+                        </div>
+
+                        <div class="cg-product-info">
+
+                            <div class="cg-product-category">
+                                Nutraceutical
+                            </div>
+
+                            <h3>
+                                Wellness Capsules
+                            </h3>
+
+                            <p>
+                                Carefully formulated nutritional solutions
+                                for contemporary wellness requirements.
+                            </p>
+
+                            <button class="cg-product-link" onclick="openProduct(
+                            'Wellness Capsules',
+                            'Nutraceutical',
+                            'https://mblogthumb-phinf.pstatic.net/MjAyNTAyMDdfNzcg/MDAxNzM4ODc5OTI0NDcz.Zj1KUWKNPDdU9J3GlMEFu4uuwKMoQIgFELXIp9KP-q8g.wQkM-iqtbifRTXB8yBP_LMvj79cnq5ZRR3u5cJ9fhFgg.JPEG/image.JPEG?type=w800',
+                            'Nutritional capsule solutions designed with a focus on quality and modern wellness needs.'
+                            )">
+                                View Details
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+         QUALITY
+    ========================= -->
+
+            <section class="cg-quality-section">
+
+                <div class="cg-quality-inner">
+
+                    <div class="cg-quality-title">
+
+                        <div class="cg-section-tag">
+                            Why CELLARTGEN
+                        </div>
+
+                        <h2>
+                            Built Around Quality,
+                            Consistency & Innovation
+                        </h2>
+
+                    </div>
+
+
+                    <div class="cg-quality-grid">
+
+                        <div class="cg-quality-card">
+
+                            <div class="cg-quality-icon">
+                                ✓
+                            </div>
+
+                            <h3>
+                                Quality Focus
+                            </h3>
+
+                            <p>
+                                A quality-oriented approach across
+                                product development and manufacturing.
+                            </p>
+
+                        </div>
+
+
+                        <div class="cg-quality-card">
+
+                            <div class="cg-quality-icon">
+                                ⚗
+                            </div>
+
+                            <h3>
+                                Modern Approach
+                            </h3>
+
+                            <p>
+                                Contemporary solutions for evolving
+                                pharmaceutical and healthcare needs.
+                            </p>
+
+                        </div>
+
+
+                        <div class="cg-quality-card">
+
+                            <div class="cg-quality-icon">
+                                ◈
+                            </div>
+
+                            <h3>
+                                Consistency
+                            </h3>
+
+                            <p>
+                                Focus on reliable processes and
+                                consistent product quality.
+                            </p>
+
+                        </div>
+
+
+                        <div class="cg-quality-card">
+
+                            <div class="cg-quality-icon">
+                                ✦
+                            </div>
+
+                            <h3>
+                                Innovation
+                            </h3>
+
+                            <p>
+                                Continuously exploring better
+                                possibilities in healthcare solutions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+         CTA
+    ========================= -->
+
+            <section class="cg-product-cta">
+
+                <div>
+
+                    <h2>
+                        Looking for a Product Partner?
+                    </h2>
+
+                    <p>
+                        Connect with CELLARTGEN LAB PRIVATE LIMITED
+                        for product and business enquiries.
+                    </p>
+
+                </div>
+
+                <a href="contact.html" class="cg-cta-btn">
+                    Contact Us →
+                </a>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- =========================
+     PRODUCT MODAL
+========================= -->
+
+        <div class="cg-modal" id="cgProductModal">
+
+            <div class="cg-modal-box">
+
+                <button class="cg-close" onclick="closeProduct()">
+                    ×
+                </button>
+
+                <div class="cg-modal-content">
+
+                    <div class="cg-modal-image">
+
+                        <img id="cgModalImage" src="" alt="Product">
+
+                    </div>
+
+                    <div class="cg-modal-info">
+
+                        <div class="cg-section-tag" id="cgModalCategory">
+                        </div>
+
+                        <h2 id="cgModalTitle">
+                        </h2>
+
+                        <p id="cgModalDescription">
+                        </p>
+
+                        <a href="contact.html" class="cg-cta-btn">
+                            Enquire Now →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+       <a class="cgp-whatsapp" href="https://wa.me/919982015750" target="_blank" rel="noopener" aria-label="Chat with Cellartgen on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i><span>Let's Talk</span>
+</a>
+
+
+        <footer class="cgen-footer">
+
+            <!-- Animated background -->
+            <div class="cgen-footer-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="cgen-footer-main">
+
+                <!-- Company -->
+                <div class="cgen-footer-col cgen-footer-brand">
+
+                    <a href="#" class="cgen-footer-logo">
+                        <span class="cgen-logo-circle">CG</span>
+
+                        <span>
+                            CELLART<span>GEN</span>
+                            <small>LAB PRIVATE LIM</small>
+                        </span>
+                    </a>
+
+                    <p>
+                        Cellartgen Lab Private Lim is committed to delivering
+                        quality-driven pharmaceutical and life-science solutions
+                        through science, innovation and excellence.
+                    </p>
+
+                    <div class="cgen-social">
+
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">◎</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quick Links -->
+                <div class="cgen-footer-col">
+
+                    <h3>Quick Links</h3>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="product.html">Our Expertise</a></li>
+                        <li><a href="our science.html">Our Science</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Our Focus -->
+                <div class="cgen-footer-col">
+
+                    <h3>Our Focus</h3>
+
+                    <ul>
+                        <li><a href="#">Pharmaceuticals</a></li>
+                        <li><a href="#">Life Sciences</a></li>
+                        <li><a href="#">Research & Development</a></li>
+                        <li><a href="#">Quality & Innovation</a></li>
+                        <li><a href="#">Healthcare Solutions</a></li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Contact -->
+                <div class="cgen-footer-col cgen-footer-contact">
+
+                    <h3>Get In Touch</h3>
+
+                    <div class="cgen-contact-row">
+                        <span class="cgen-contact-icon">☎</span>
+                        <div>
+                            <small>CALL US</small>
+                            <a href="tel:+919982015750">
+                                +91 99820 15750
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="cgen-contact-row">
+                        <span class="cgen-contact-icon">✉</span>
+                        <div>
+                            <small>EMAIL US</small>
+                            <a href="mailto:info@cellartgen.com">
+                                info@cellartgen.com
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="cgen-contact-row">
+                        <span class="cgen-contact-icon">⌖</span>
+                        <div>
+                            <small>LOCATION</small>
+                            <p>India</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Newsletter -->
+            <div class="cgen-footer-newsletter">
+
+                <div>
+                    <span>STAY CONNECTED</span>
+                    <h3>Stay updated with our latest innovations.</h3>
+                </div>
+
+                <form class="cgen-newsletter-form">
+
+                    <input type="email" placeholder="Enter your email address">
+
+                    <button type="submit">
+                        Subscribe
+                        <b>→</b>
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- Bottom -->
+            <div class="cgen-footer-bottom">
+
+                <p>
+                    © 2026 Cellartgen Lab Private Lim. All Rights Reserved.
+                </p>
+
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+
+            </div>
+
+        </footer>
+
+
+
+
+        <script src="js/script.js"></script>
+        <script src="js/blog-products.js"></script>
+        <script src="js/product-content.js"></script>
+        <script src="js/catalog-details.js"></script>
+
+    </body>
+
+</html>

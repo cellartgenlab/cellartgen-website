@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cellartgen | Admin Dashboard</title>
+  <link rel="stylesheet" href="css/admin.css    ">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .cms-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0
+    }
+
+    .cms-tabs button,
+    .cms-action {
+      background: #211d19;
+      border: 1px solid #4b3a28;
+      color: #d7c5a8;
+      padding: 9px 14px;
+      border-radius: 9px;
+      cursor: pointer
+    }
+
+    .cms-tabs button.selected,
+    .cms-tabs button:hover,
+    .cms-action:hover {
+      background: #8b6737;
+      color: #fff
+    }
+
+    .cms-list {
+      display: grid;
+      gap: 10px
+    }
+
+    .cms-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px;
+      background: rgba(255, 255, 255, .035);
+      border: 1px solid rgba(190, 150, 90, .18);
+      border-radius: 10px
+    }
+
+    .cms-row h4 {
+      margin: 0 0 5px;
+      color: #eadcc8
+    }
+
+    .cms-row p {
+      margin: 0;
+      color: #9e9487;
+      font-size: 13px
+    }
+
+    .cms-actions {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap
+    }
+
+    .cms-empty {
+      padding: 30px;
+      text-align: center;
+      color: #aaa
+    }
+
+    .cms-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 16px 0
+    }
+
+    .cms-form input,
+    .cms-form textarea,
+    .cms-form select {
+      width: 100%;
+      padding: 11px;
+      background: #171411;
+      color: #eee;
+      border: 1px solid #514332;
+      border-radius: 8px
+    }
+
+    .cms-form textarea {
+      min-height: 90px;
+      grid-column: 1/-1
+    }
+
+    .cms-form button {
+      justify-self: start
+    }
+
+    .cms-row small {
+      color: #b99a6c
+    }
+
+    @media(max-width:650px) {
+      .cms-form {
+        grid-template-columns: 1fr
+      }
+
+      .cms-row {
+        align-items: flex-start;
+        flex-direction: column
+      }
+    }
+
+    .auth-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(12, 10, 8, .96);
+      backdrop-filter: blur(12px)
+    }
+
+    .auth-card {
+      width: min(420px, 100%);
+      padding: 34px;
+      border: 1px solid rgba(190, 150, 90, .35);
+      border-radius: 18px;
+      background: #191511;
+      color: #eee;
+      box-shadow: 0 24px 80px #0008
+    }
+
+    .auth-card h2 {
+      margin: 0 0 8px;
+      color: #e8d4b5
+    }
+
+    .auth-card p {
+      color: #aaa;
+      font-size: 14px;
+      line-height: 1.6
+    }
+
+    .auth-card label {
+      display: block;
+      margin: 16px 0 6px;
+      color: #c9b18d;
+      font-size: 13px
+    }
+
+    .auth-card input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #514332;
+      border-radius: 9px;
+      background: #100e0c;
+      color: #fff
+    }
+
+    .auth-card button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 13px;
+      border: 0;
+      border-radius: 9px;
+      background: #967044;
+      color: white;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    .auth-error {
+      min-height: 20px;
+      color: #f0a09a;
+      font-size: 13px;
+      margin-top: 12px
+    }
+
+    .logout-btn {
+      padding: 9px 13px;
+      border: 1px solid #80623c;
+      border-radius: 9px;
+      background: transparent;
+      color: #d7c5a8;
+      cursor: pointer
+    }
+  </style>
+</head>
+
+<body>
+  <div class="auth-gate" id="authGate">
+    <form class="auth-card" id="loginForm">
+      <div style="font-size:28px;color:#c5a16c">✧</div>
+      <h2>Cellartgen Admin</h2>
+      <p>Sign in to securely manage website content and enquiries.</p><label for="adminUser">Username</label><input
+        id="adminUser" name="user" autocomplete="username" required><label for="adminPass">Password</label><input
+        id="adminPass" name="pass" type="password" autocomplete="current-password" required><button type="submit"
+        id="loginSubmit">Sign In</button>
+      <div class="auth-error" id="loginError" role="alert"></div>
+    </form>
+  </div>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">✧</div>
+      <nav>
+        <a class="active" href="#dashboard" title="Dashboard">◈</a>
+
+        <a href="#expertise" title="Our Expertise">▣</a>
+        <a href="#blogs" title="Blogs">▤</a>
+        <a href="#media" title="Machine Media">▧</a>
+        <a href="#enquiries" title="Enquiries">♙</a>
+        <a href="#settings" title="Settings">⚙</a>
+      </nav>
+      <div class="side-bottom"><a href="#help">ⓘ</a>
+        <div class="avatar">C</div>
+      </div>
+    </aside>
+
+    <main class="main" id="dashboard">
+      <header class="topbar">
+        <h1>Dashboard</h1>
+        <div class="top-actions">
+          <button class="round" id="themeBtn" title="Toggle theme">☼</button>
+          <button class="round">☾</button>
+          <button class="branch">♧ &nbsp; Cellartgen Lab <span>⌄</span></button>
+          <button class="round">⚙</button><button class="logout-btn" id="logoutBtn" type="button">Sign out</button>
+        </div>
+      </header>
+
+      <section class="welcome">
+        <div>
+          <h2>Welcome back!</h2>
+          <p>Today? <span id="today"></span></p>
+        </div>
+        <div class="tools"><input id="search" placeholder="Search dashboard"><button class="round">⌕</button><button
+            class="pill">▣ &nbsp; Schedule</button><button class="add" id="addTask">＋</button></div>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="top-stats">
+          <article class="panel stat"><small>WEBSITE PAGES</small>
+            <div class="stat-line"><strong id="pageCount">—</strong><span class="spark green">⌁⌁⌁</span></div>
+            <footer><em>↗ 12%</em><span>This month　⌄</span></footer>
+          </article>
+          <article class="panel stat"><small>OUR EXPERTISE</small>
+            <div class="stat-line"><strong id="expertiseCount">—</strong><span class="spark green">⌁⌁⌁</span></div>
+            <footer><em>↗ 08%</em><span>This month　⌄</span></footer>
+          </article>
+          <article class="panel stat"><small>ENQUIRIES</small>
+            <div class="stat-line"><strong id="enquiryCount">—</strong><span class="spark red">⌁⌁⌁</span></div>
+            <footer><em class="redtag">↘ 04%</em><span>This month　⌄</span></footer>
+          </article>
+          <article class="panel stat"><small>MEDIA FILES</small>
+            <div class="stat-line"><strong id="mediaCount">—</strong><span class="spark gold">⌁⌁⌁</span></div>
+            <footer><em>↗ 16%</em><span>This month　⌄</span></footer>
+          </article>
+        </div>
+
+        <article class="panel progress">
+          <div class="panel-head">
+            <h3>Website Activity Overview</h3>
+            <div class="legend"><span class="purple-dot"></span> Published <span class="gold-dot"></span> Draft</div>
+          </div>
+          <canvas id="activityChart"></canvas>
+        </article>
+
+        <article class="panel score">
+          <h3>CONTENT PERFORMANCE</h3>
+          <div class="gauge">
+            <div class="gauge-inner"><strong>86</strong><small>Quality Score</small></div>
+          </div>
+          <div class="score-legend"><span>● SEO <b>90%</b></span><span>● Content <b>82%</b></span><span>● Media
+              <b>86%</b></span></div>
+          <button class="average">✧ &nbsp; Excellent Performance</button>
+        </article>
+
+        <article class="panel calendar">
+          <h3>ACTIVITY SCHEDULE</h3>
+          <div class="month"><button id="prevMonth">‹</button><span id="monthLabel">October 2026</span><button
+              id="nextMonth">›</button></div>
+          <div class="calendar-grid" id="calendar"></div>
+          <div class="calendar-search">⌕ &nbsp; Search activity <span>⚑</span></div>
+          <div class="tabs"><button class="selected">Tasks</button><button>Events</button><button>Updates</button></div>
+          <div class="meeting">
+            <div><b>Website Content Review</b><small>09:25 – 09:45 AM</small></div><time>◷ 09:56</time>
+            <p>Cellartgen Admin Team</p>
+          </div>
+          <div class="meeting">
+            <div><b>Our Expertise Update</b><small>11:00 – 11:30 AM</small></div><time>◷ 11:00</time>
+            <p>Content Management</p>
+          </div>
+          <div class="meeting">
+            <div><b>Media Upload Review</b><small>02:00 – 02:20 PM</small></div><time>◷ 02:00</time>
+            <p>Machine Gallery</p>
+          </div>
+        </article>
+
+        <article class="panel tracker">
+          <h3>Status Tracker</h3><small class="muted">Recent website updates</small>
+          <div class="person"><span class="person-icon">D</span>
+            <div><b>Our Expertise</b><small>Content updated</small></div><label>2 Hr</label>
+          </div>
+          <div class="person"><span class="person-icon">B</span>
+            <div><b>Blog Articles</b><small>Review pending</small></div><label>1 Hr</label>
+          </div>
+          <div class="person"><span class="person-icon">M</span>
+            <div><b>Machine Media</b><small>Upload complete</small></div><label>Today</label>
+          </div>
+        </article>
+
+        <article class="panel tracker">
+          <h3>Status Tracker</h3><small class="muted">Admin activity</small>
+          <div class="person"><span class="person-icon">A</span>
+            <div><b>Admin Panel</b><small>System active</small></div><label>Now</label>
+          </div>
+          <div class="person"><span class="person-icon">E</span>
+            <div><b>Enquiries</b><small>New messages</small></div><label>1 Hr</label>
+          </div>
+          <div class="person"><span class="person-icon">S</span>
+            <div><b>Site Settings</b><small>No changes</small></div><label>Today</label>
+          </div>
+        </article>
+
+        <article class="panel tasks">
+          <div class="panel-head">
+            <h3>Tasks</h3><button class="add small-add" id="addTask2">＋</button>
+          </div>
+          <div id="taskList">
+            <div class="task"><b>Review Our Expertise content</b><small>Check details and SEO content</small>
+              <footer><span>Today</span><span class="urgent">Urgent</span><span class="todo">To Do ⌄</span></footer>
+            </div>
+            <div class="task"><b>Upload machine photographs</b><small>Add latest facility images</small>
+              <footer><span>Tomorrow</span><span>Medium</span><span class="todo">To Do ⌄</span></footer>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="panel cms-workspace" id="cmsWorkspace" style="grid-column:1/-1;margin-top:22px;padding:24px;">
+        <div class="panel-head">
+          <div>
+            <h3 id="cmsTitle">Website Content Manager</h3><small class="muted">Manage website content from this
+              dashboard</small>
+          </div><button class="add" id="cmsAdd">＋ Add New</button>
+        </div>
+        <div class="cms-tabs" id="cmsTabs"><button class="selected" data-type="expertise">Our Expertise</button><button
+            data-type="pages">Website Pages</button><button data-type="blogs">Blogs</button><button
+            data-type="media">Media Library</button><button data-type="settings">Site Settings</button><button
+            data-type="enquiries">Enquiries</button></div>
+        <div id="cmsNotice" role="status" style="margin:14px 0;color:#c9a66b"></div>
+        <div id="cmsList" class="cms-list">
+          <p class="muted">Loading content…</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+<!-- Cellartgen Universal Content Editor -->
+<div id="cmsModal" class="cms-modal" aria-hidden="true">
+  <div class="cms-modal-card">
+    <div class="cms-modal-header">
+      <h2 id="cmsFormTitle">Add Content</h2>
+      <button type="button" id="cmsClose">✕</button>
+    </div>
+
+    <form id="cmsEditorForm">
+      <div class="cms-form">
+
+        <label>Page / Product Name
+          <input id="fTitle" required placeholder="Enter name">
+        </label>
+
+        <label id="pageSlugField">Page URL / Slug
+          <input id="fSlug" placeholder="e.g. about-us">
+        </label>
+
+        <label id="categoryField">Category
+          <input id="fCategory" placeholder="Enter category">
+        </label>
+
+        <label>Short Description
+          <textarea id="fShort" placeholder="Short introduction"></textarea>
+        </label>
+
+        <label>Hero Heading
+          <input id="fHeroTitle" placeholder="Main page heading">
+        </label>
+
+        <label>Hero Subheading
+          <textarea id="fHeroSubtitle" placeholder="Supporting heading"></textarea>
+        </label>
+
+        <label>Full Description / Page Content
+          <textarea id="fDescription" placeholder="Enter full content"></textarea>
+        </label>
+
+        <label>Additional Sections
+          <textarea id="fSections" placeholder="Add section headings and content"></textarea>
+        </label>
+
+        <label id="benefitsField">Benefits
+          <textarea id="fBenefits" placeholder="One benefit per line"></textarea>
+        </label>
+
+        <label id="dosageField">Dosage Forms
+          <input id="fDosage" placeholder="Capsule, Tablet, Powder">
+        </label>
+
+        <label id="manufacturingField">Manufacturing Details
+          <textarea id="fManufacturing" placeholder="Manufacturing information"></textarea>
+        </label>
+
+        <label>Image URL
+          <input id="fImageUrl" placeholder="Image URL (optional)">
+        </label>
+
+        <label>Upload Image
+          <input type="file" id="fImageFile" accept="image/*">
+        </label>
+
+        <img id="fImagePreview" hidden alt="Content preview"
+          style="max-width:180px;max-height:140px;object-fit:contain">
+
+        <label>Status
+          <select id="fStatus">
+            <option value="draft">Draft</option>
+            <option value="published">Published</option>
+          </select>
+        </label>
+
+        <label>SEO Title
+          <input id="fSeoTitle" placeholder="SEO title">
+        </label>
+
+        <label>SEO Keywords
+          <textarea id="fKeywords" placeholder="keyword1, keyword2"></textarea>
+        </label>
+
+        <label>Meta Description
+          <textarea id="fMeta" placeholder="SEO meta description"></textarea>
+        </label>
+
+      </div>
+
+      <div class="cms-modal-actions">
+        <button type="button" id="cmsCancel">Cancel</button>
+        <button type="submit" id="cmsSave">Save to MongoDB</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <script src="js/admin.js"></script>
+</body>
+
+</html>

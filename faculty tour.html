@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machines &amp; Videos | CELLARTGEN</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/machine-media.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header" id="mainHeader">
+
+    <div class="header-container">
+
+ 
+<!-- CELLARTGEN NEW HEADER LOGO -->
+<a href="index.html" class="ctg-new-header-logo">
+    <img
+        src="img/CELL-ARTGEN.png"
+        alt="CELLARTGEN"
+    >
+</a>
+
+
+
+        <!-- DESKTOP NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="product.html">Our Expertise</a>
+            <a href="patented-apis.html">Patented APIs</a>
+            <a href="faculty tour.html"class="active">faculty tour</a>
+            <a href="our science.html">Our Science</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+
+        <!-- HEADER CONTACT -->
+
+        <div class="header-contact">
+
+            <a href="tel:+919982015750">
+                <span class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </span>
+                +91 9982015750
+            </a>
+
+            <a href="mailto:info@cellartgen.com">
+                <span class="contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+                info@cellartgen.com
+            </a>
+
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE BUTTON -->
+
+        <button class="mobile-menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+
+    <!-- MOBILE MENU -->  
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Our Expertise</a>
+        <a href="patented-apis.html">Patented APIs</a>
+        <a href="faculty tour.html"class="active">faculty tour</a>
+        <a href="our science.html">Our Science</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+
+        <div class="mobile-contact">
+
+            <a href="tel:+919982015750">
+                <i class="fa-solid fa-phone"></i>
+                +91 98765 43210
+            </a>
+
+            <a href="mailto:info@cellartgen.com">
+                <i class="fa-solid fa-envelope"></i>
+                info@cellartgen.com
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<main class="mm-page">
+  <section class="mm-hero">
+    <div class="mm-hero-overlay"></div>
+    <div class="mm-hero-content">
+      <span class="mm-eyebrow"><i class="fa-solid fa-gears"></i> OUR MANUFACTURING CAPABILITIES</span>
+      <h1>Machines <span>&amp; Videos</span></h1>
+      <p>Explore our manufacturing equipment, production processes and facility through photos and videos.</p>
+      <a class="mm-primary-btn" href="#media-gallery">Explore Gallery <i class="fa-solid fa-arrow-down"></i></a>
+    </div>
+    <div class="mm-hero-orbit"><i class="fa-solid fa-industry"></i></div>
+  </section>
+
+  <section class="mm-intro">
+    <div><span class="mm-kicker">INSIDE CELLARTGEN</span><h2>Technology, process <em>&amp; precision</em></h2></div>
+    <p>Take a closer look at the equipment and processes that support our nutraceutical and herbal manufacturing operations. Gallery items can be organized by machine, process or facility area.</p>
+  </section>
+
+  <section class="mm-categories" aria-label="Gallery categories">
+    <article><span><i class="fa-solid fa-gears"></i></span><h3>Manufacturing Machines</h3><p>Equipment and machinery used across production operations.</p></article>
+    <article><span><i class="fa-solid fa-capsules"></i></span><h3>Production Process</h3><p>Powder processing, blending, capsule and related operations.</p></article>
+    <article><span><i class="fa-solid fa-building"></i></span><h3>Facility Gallery</h3><p>Facility, work areas and manufacturing infrastructure.</p></article>
+  </section>
+
+  <section class="mm-gallery-section" id="media-gallery">
+    <div class="mm-section-heading"><div><span class="mm-kicker">VISUAL TOUR</span><h2>Our Media Gallery</h2></div><p>Photos and videos from our manufacturing environment.</p></div>
+    <div class="mm-filter-row"><button class="mm-filter active" data-filter="all">All Media</button><button class="mm-filter" data-filter="image">Photos</button><button class="mm-filter" data-filter="video">Videos</button></div>
+    <div class="mm-gallery" id="mmGallery" aria-live="polite"><div class="mm-empty"><i class="fa-regular fa-images"></i><h3>Loading media gallery</h3><p>Manufacturing photos and videos are being prepared.</p></div></div>
+  </section>
+
+  <section class="mm-upload-section" id="upload-media">
+    <div class="mm-upload-copy"><span class="mm-kicker">MEDIA MANAGEMENT</span><h2>Add photos <em>&amp; videos</em></h2><p>Add new machine photos or videos to preview them in the gallery. Files already included with this website are displayed above. For uploads to remain available to every website visitor after publishing, connect a server or CMS media library.</p><ul><li><i class="fa-solid fa-check"></i> JPG, PNG and WEBP photos</li><li><i class="fa-solid fa-check"></i> MP4, WEBM and MOV videos</li><li><i class="fa-solid fa-check"></i> Add a title and category for each item</li></ul></div>
+    <form class="mm-upload-card" id="mmUploadForm">
+      <label class="mm-field-label" for="mmTitle">Media title</label><input id="mmTitle" type="text" placeholder="e.g. Automatic Capsule Filling Machine" required>
+      <label class="mm-field-label" for="mmCategory">Category</label><select id="mmCategory"><option>Manufacturing Machines</option><option>Production Process</option><option>Facility Gallery</option></select>
+      <label class="mm-dropzone" for="mmFiles"><i class="fa-solid fa-cloud-arrow-up"></i><strong>Choose photos or videos</strong><span>or drop files here · multiple files supported</span><input id="mmFiles" type="file" accept="image/*,video/mp4,video/webm,video/quicktime" multiple></label>
+      <div id="mmSelected" class="mm-selected">No files selected yet.</div>
+      <button class="mm-submit" type="submit">Preview in Gallery <i class="fa-solid fa-arrow-right"></i></button>
+      <p class="mm-upload-note"><i class="fa-solid fa-circle-info"></i> Newly selected files are previewed in this browser only. To publish them permanently for all visitors, your hosting needs a server-side upload folder or CMS media library.</p>
+    </form>
+  </section>
+</main>
+
+<footer class="cgen-footer">
+
+  <!-- Animated background -->
+  <div class="cgen-footer-particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="cgen-footer-main">
+
+    <!-- Company -->
+    <div class="cgen-footer-col cgen-footer-brand">
+
+<!-- CELLARTGEN NEW FOOTER LOGO -->
+<a href="index.html" class="ctg-new-footer-logo">
+    <img
+        src="img/CELL-ARTGEN.png"
+        alt="CELLARTGEN"
+        loading="lazy"
+    >
+</a>
+
+
+      <p>
+        Cellartgen Lab Private Lim is committed to delivering
+        quality-driven pharmaceutical and life-science solutions
+        through science, innovation and excellence.
+      </p>
+
+      <div class="cgen-social">
+
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="YouTube">▶</a>
+
+      </div>
+
+    </div>
+
+
+    <!-- Quick Links -->
+    <div class="cgen-footer-col">
+
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="product.html">Our Expertise</a></li>
+        <li><a href="our science.html">Our Science</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+    </div>
+
+
+    <!-- Our Focus -->
+    <div class="cgen-footer-col">
+
+      <h3>Our Focus</h3>
+
+      <ul>
+        <li><a href="#">Pharmaceuticals</a></li>
+        <li><a href="#">Life Sciences</a></li>
+        <li><a href="#">Research & Development</a></li>
+        <li><a href="#">Quality & Innovation</a></li>
+        <li><a href="#">Healthcare Solutions</a></li>
+      </ul>
+
+    </div>
+
+
+    <!-- Contact -->
+    <div class="cgen-footer-col cgen-footer-contact">
+
+      <h3>Get In Touch</h3>
+
+      <div class="cgen-contact-row">
+        <span class="cgen-contact-icon">☎</span>
+        <div>
+          <small>CALL US</small>
+          <a href="tel:+919982015750">
+            +91 99820 15750
+          </a>
+        </div>
+      </div>
+
+
+      <div class="cgen-contact-row">
+        <span class="cgen-contact-icon">✉</span>
+        <div>
+          <small>EMAIL US</small>
+          <a href="mailto:info@cellartgen.com">
+            info@cellartgen.com
+          </a>
+        </div>
+      </div>
+
+
+      <div class="cgen-contact-row">
+        <span class="cgen-contact-icon">⌖</span>
+        <div>
+          <small>LOCATION</small>
+          <p>India</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Newsletter -->
+  <div class="cgen-footer-newsletter">
+
+    <div>
+      <span>STAY CONNECTED</span>
+      <h3>Stay updated with our latest innovations.</h3>
+    </div>
+
+    <form class="cgen-newsletter-form">
+
+      <input
+        type="email"
+        placeholder="Enter your email address"
+      >
+
+      <button type="submit">
+        Subscribe
+        <b>→</b>
+      </button>
+
+    </form>
+
+  </div>
+
+
+  <!-- Bottom -->
+  <div class="cgen-footer-bottom">
+
+    <p>
+      © 2026 Cellartgen Lab Private Lim. All Rights Reserved.
+    </p>
+
+    <div>
+      <a href="#">Privacy Policy</a>
+      <span>|</span>
+      <a href="#">Terms & Conditions</a>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/faculty tour.js"></script>
+</body>
+</html>
